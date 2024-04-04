@@ -8,5 +8,4 @@ import lombok.Data;
 public class Quiz {
     private Integer id;
     private String title;
-
 }
