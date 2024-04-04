@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 @NoArgsConstructor
 @Entity
 public class Questions {
-    private Integer id;
+    private Long id;
     private String question;
     private String option1;
     private String option2;
