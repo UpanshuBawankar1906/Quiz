@@ -13,10 +13,10 @@ public class QuestionsRepoImpl implements QuestionsRepo {
 
     @Override
     public Questions insert(Questions questions) {
-        jdbcTemplate.update("INSERT into questions(question,option1,option2,option3,option4,correctAnswer,difficultyLevel,category)"
-                        + "values(?,?,?,?,?,?,?,?)",
-                questions.getQuestion(), questions.getOption1(), questions.getOption2(), questions.getOption3(),
-                questions.getOption4(), questions.getCorrectAnswer(), questions.getDifficultyLevel(),
+        jdbcTemplate.update("INSERT into questions(id,question,option1,option2,option3,option4,correctanswer,difficultylevel,category)"
+                        + "values(?,?,?,?,?,?,?,?,?)",
+                questions.getId(), questions.getQuestion(), questions.getOption1(), questions.getOption2(), questions.getOption3(),
+                questions.getOption4(), questions.getCorrectanswer(), questions.getDifficultylevel(),
                 questions.getCategory());
         return questions;
     }
@@ -24,9 +24,9 @@ public class QuestionsRepoImpl implements QuestionsRepo {
     @Override
     public List<Questions> getAll() {
         return jdbcTemplate.query("select * from questions", (rs, rowNum) -> {
-            return new Questions(rs.getLong(1), rs.getString(2), rs.getString(3),
+            return new Questions(rs.getLong(1), rs.getString(9), rs.getString(3),
                     rs.getString(4), rs.getString(5), rs.getString(6),
-                    rs.getString(7), rs.getString(8), rs.getString(9));
+                    rs.getString(7), rs.getString(8), rs.getString(2));
         });
     }
 
@@ -35,7 +35,7 @@ public class QuestionsRepoImpl implements QuestionsRepo {
         jdbcTemplate.update("update questions set question=?, option1=?, option2=?, option3=?, option4=?," +
                         "correctAnswer=?, difficultyLevel=?, category=? where id=?", questions.getQuestion(),
                 questions.getOption1(), questions.getOption2(), questions.getOption3(), questions.getOption4(),
-                questions.getCorrectAnswer(), questions.getDifficultyLevel(), questions.getCategory(),
+                questions.getCorrectanswer(), questions.getDifficultylevel(), questions.getCategory(),
                 questions.getId());
         return questions;
     }
