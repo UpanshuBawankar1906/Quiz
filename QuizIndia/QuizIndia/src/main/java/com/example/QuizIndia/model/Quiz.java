@@ -1,11 +1,13 @@
 package com.example.QuizIndia.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Data;
 
 @Data
 @Entity
 public class Quiz {
-    private Integer id;
+    @Id
+    private int id;
     private String title;
 }
