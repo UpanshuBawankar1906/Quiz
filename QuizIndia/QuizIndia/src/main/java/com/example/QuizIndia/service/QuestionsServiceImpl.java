@@ -19,7 +19,6 @@ public class QuestionsServiceImpl implements QuestionsService{
     public List<Questions> getAll() {
         return repo.getAll();
     }
-
     @Override
     public Questions update(Questions questions) {
         return null;
