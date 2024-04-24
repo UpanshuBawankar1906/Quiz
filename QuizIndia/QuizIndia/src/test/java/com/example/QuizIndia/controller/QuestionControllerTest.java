@@ -38,7 +38,6 @@ public class QuestionControllerTest {
         MockitoAnnotations.initMocks(this);
         mockMvc = MockMvcBuilders.standaloneSetup(questionController).build();
     }
-
     @Test
     public void testCreateQuestion() throws Exception {
         Questions question = new Questions();
