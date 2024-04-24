@@ -25,7 +25,4 @@ public class QuestionController {
     public List<Questions> getAll(){
         return service.getAll();
     }
-
-
-
 }
